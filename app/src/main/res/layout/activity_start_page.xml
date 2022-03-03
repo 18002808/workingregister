@@ -221,7 +221,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/interestsCard"
+            android:id="@+id/images"
             android:layout_width="140dp"
             android:layout_height="170dp"
             android:layout_margin="8dp"
