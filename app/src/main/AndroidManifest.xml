@@ -13,6 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Artyapp">
         <activity
+            android:name=".displayCart"
+            android:exported="false" />
+        <activity
+            android:name=".displayPortfolio"
+            android:exported="false" />
+        <activity
+            android:name=".displayProfile"
+            android:exported="false" />
+        <activity
+            android:name=".displayCollections"
+            android:exported="false" />
+        <activity
             android:name=".addImage"
             android:exported="false" />
         <activity
