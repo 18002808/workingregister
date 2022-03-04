@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class artistDashboard extends AppCompatActivity {
     TextView textViewName;
-    CardView insertImages;
+    CardView images, collections, profile, myArt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,10 @@ public class artistDashboard extends AppCompatActivity {
         }
 
         textViewName = findViewById(R.id.textViewName);
-        insertImages = findViewById(R.id.images);
+        images = findViewById(R.id.images);
+        collections = findViewById(R.id.collections);
+        profile = findViewById(R.id.profile);
+        myArt = findViewById(R.id.myart);
         User user = SharedPrefManager.getInstance(this).getUser();
         textViewName.setText(user.getName());
 
@@ -35,10 +38,30 @@ public class artistDashboard extends AppCompatActivity {
             }
         });
 
-        insertImages.setOnClickListener(new View.OnClickListener() {
+        images.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(artistDashboard.this, addImage.class));
+            }
+        });
+
+        collections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(artistDashboard.this, collectionOfImages.class));
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(artistDashboard.this, displayProfile.class));
+            }
+        });
+        myArt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(artistDashboard.this, showArtistPortfolio.class));
             }
         });
     }

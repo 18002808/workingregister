@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/contributeCard"
+            android:id="@+id/collections"
             android:layout_width="140dp"
             android:layout_height="170dp"
             android:layout_margin="8dp"
@@ -112,7 +112,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/practiceCard"
+            android:id="@+id/myart"
             android:layout_width="140dp"
             android:layout_height="170dp"
             android:layout_margin="8dp"
@@ -174,7 +174,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/learnCard"
+            android:id="@+id/profile"
             android:layout_width="140dp"
             android:layout_height="170dp"
             android:layout_margin="8dp"
