@@ -1,17 +1,19 @@
 package com.example.artyapp;
 
-public class imageModel {
+public class Image {
     private int id;
     private String imageName;
     private String imageDescription;
     private String image;
+    private String username;
 
     // Constructor
-    public imageModel(String imageName, String Description, int id, String image) {
+    public Image(int id,String image,String imageName, String Description,  String username) {
         this.id = id;
+        this.image = image;
         this.imageName = imageName;
         this.imageDescription = Description;
-        this.image = image;
+        this.username = username;
 
     }
     public String getImage() {

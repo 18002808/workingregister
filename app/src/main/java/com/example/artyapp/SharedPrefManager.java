@@ -36,6 +36,18 @@ public class SharedPrefManager {
         editor.putString(KEY_NAME, user.getName());
         editor.apply();
     }
+    /*
+    public void userImage(Image image) {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY_ID, image.getId());
+        editor.putString(KEY_USERNAME, image.getImageName();
+        editor.putString(KEY_EMAIL, image.getImageDescription());
+        editor.putString(KEY_NAME, image.getImage();
+        editor.apply();
+    }
+    */
+
 
     //this method will checker whether user is already logged in or not
     public boolean isLoggedIn() {

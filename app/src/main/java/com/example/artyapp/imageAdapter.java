@@ -8,53 +8,60 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ViewHolder> {
-    Context context;
-    private ArrayList<imageModel> imageModelArrayList;
+public class imageAdapter extends RecyclerView.Adapter<imageViewHolder> {
+    private Context context;
+    private ArrayList<Image> imageArrayList;
 
-    public imageAdapter(Context context, ArrayList<imageModel> courseModelArrayList) {
+    public imageAdapter(Context context, ArrayList<Image> imageArrayList) {
         this.context = context;
-        this.imageModelArrayList = imageModelArrayList;
+        this.imageArrayList = imageArrayList;
     }
 
 
-    @NonNull
+
     @Override
-    public imageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
-        return new ViewHolder(view);
+    public imageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //LayoutInflater inflater = LayoutInflater.from(context);
+        //View view=inflater.inflate(R.layout.images_list,null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout,parent,false);
+        return new imageViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull imageAdapter.ViewHolder holder, int position) {
-        imageModel model = imageModelArrayList.get(position);
-        holder.imageName.setText(model.getImageName());
-        holder.imageDescription.setText("" + model.getImageDescription());
-        holder.image.setImageResource(Integer.parseInt(model.getImage()));
+    public void onBindViewHolder(@NonNull imageViewHolder holder, int position) {
+        Image image  = imageArrayList.get(position);
+        Glide.with(context)
+                .load(image.getImage())
+                .into(holder.imageView);
+        holder.imageName.setText(image.getImageName());
+        holder.imageDescription.setText( image.getImageDescription());
+
 
     }
 
     @Override
     public int getItemCount() {
-        return imageModelArrayList.size();
+        return imageArrayList.size();
     }
 
+}
 
-    public class ViewHolder  extends RecyclerView.ViewHolder{
-        private ImageView image;
-        private TextView imageName, imageDescription;
+class imageViewHolder extends RecyclerView.ViewHolder{
+    public ImageView imageView;
+    //private ImageView image;
+    public TextView imageName, imageDescription;
 
 
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            image = itemView.findViewById(R.id.idIVCourseImage);
-            imageName = itemView.findViewById(R.id.idTVCourseName);
-            imageDescription = itemView.findViewById(R.id.idTVCourseRating);
-        }
+    public imageViewHolder(@NonNull View itemView) {
+        super(itemView);
+        imageView = itemView.findViewById(R.id.addImageIcon);
+        imageName = itemView.findViewById(R.id.textName);
+        imageDescription = itemView.findViewById(R.id.textViewDescription);
     }
 }

@@ -30,7 +30,7 @@
 
         <!--ImageVIew to display our Course Image-->
         <ImageView
-            android:id="@+id/idIVCourseImage"
+            android:id="@+id/addImageIcon"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
@@ -41,12 +41,12 @@
 
         <!--Text View to display Course Name-->
         <TextView
-            android:id="@+id/idTVCourseName"
+            android:id="@+id/textName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/idIVCourseImage"
+            android:layout_toEndOf="@id/addImageIcon"
             android:text="course_name"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -55,13 +55,13 @@
         <!--Text VIew to display COurse Rating-->
         <!--Image used in present in drawable folder-->
         <TextView
-            android:id="@+id/idTVCourseRating"
+            android:id="@+id/textViewDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idTVCourseName"
+            android:layout_below="@id/textName"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/idIVCourseImage"
+            android:layout_toEndOf="@id/addImageIcon"
             android:drawablePadding="2dp"
             android:text="course_rating"
             />

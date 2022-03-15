@@ -78,7 +78,7 @@ public class register extends AppCompatActivity {
     }
 
     private void register(String name,String username, String email, String password){
-        String url = "http://192.168.0.36/testing/Api.php?apicall=signup";
+        String url = "http://192.168.0.36/artapp/serverdoc/Api.php?apicall=signup";
         RequestQueue queue = VolleySingleton.getInstance(this.getApplicationContext()).getRequestQueue();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

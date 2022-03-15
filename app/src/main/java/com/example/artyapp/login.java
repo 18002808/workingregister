@@ -59,7 +59,7 @@ public class login extends AppCompatActivity {
 
     }
     private void loggingIn(){
-        String url = "http://192.168.0.36/testing/Api.php?apicall=login";
+        String url = "http://192.168.0.36/artapp/serverdoc/Api.php?apicall=login";
         final String username = editUsername.getText().toString();
         final String password = editPassword.getText().toString();
 
