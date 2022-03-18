@@ -5,6 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,38 +26,49 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class showArtistPortfolio extends AppCompatActivity {
+public class Artstyle extends AppCompatActivity {
     RecyclerView recyclerView;
     imageAdapter myAdapter;
     ArrayList<Image> imageList;
     Image modelImage;
     LinearLayoutManager linearLayoutManager;
-    private String username;
+    EditText artStyle;
+    Button search;
+    private String artstyle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addimage);
-        User user = SharedPrefManager.getInstance(this).getUser();
+        setContentView(R.layout.activity_artstyle);
         recyclerView = findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(this);
-        username = user.getUsername();
+        artStyle = findViewById(R.id.artStyleSearch);
+        search = findViewById(R.id.searchArtStyle);
+        //username = user.getUsername();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         imageList = new ArrayList<>();
         myAdapter = new imageAdapter(this, imageList);
         recyclerView.setAdapter(myAdapter);
         //System.out.println(currentUsername);
 
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                artstyle = artStyle.getText().toString();
+                getImage();
+            }
+        });
+
 
         //getImage(currentUsername);
-        getImage();
+        // getImage();
 
 
     }
 
     public void getImage() {
 
-        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.36/artapp/getPortfolios.php",
+        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.36/artapp/getArtstyle.php",
                 new Response.Listener<String>() {
                     public void onResponse(String response) {
 
@@ -97,12 +112,12 @@ public class showArtistPortfolio extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 // Toast.makeText(addImage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-            })
+        })
 
-            {
-                protected Map<String, String> getParams () throws AuthFailureError {
+        {
+            protected Map<String, String> getParams () throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("username", username);
+                params.put("artstyle", artstyle);
                 return params;
             }
 

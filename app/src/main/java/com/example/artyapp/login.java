@@ -38,7 +38,7 @@ public class login extends AppCompatActivity {
 
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
-            startActivity(new Intent(this, artistDashboard.class));
+            startActivity(new Intent(this, nonArtistBoard.class));
         }
 
         register.setOnClickListener(new View.OnClickListener() {

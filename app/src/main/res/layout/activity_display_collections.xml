@@ -6,9 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".displayCollections">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/artstyleBtn"
+        android:layout_width="154dp"
+        android:layout_height="87dp"
+        android:layout_marginBottom="120dp"
+        android:text="Art Style"
+        app:layout_constraintBottom_toTopOf="@+id/variousBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/searchByMedium"
+        android:layout_width="152dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="108dp"
+        android:text="Medium"
+        app:layout_constraintBottom_toTopOf="@+id/artstyleBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/variousBtn"
+        android:layout_width="153dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="132dp"
+        android:text="various"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

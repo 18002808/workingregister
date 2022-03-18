@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class addImage extends AppCompatActivity {
-    RecyclerView recyclerView;
+    RecyclerView recyclerViewportfolio;
     imageAdapter myAdapter;
     ArrayList<Image> imageList;
     Image modelImage;
@@ -44,13 +44,13 @@ public class addImage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addimage);
         User user = SharedPrefManager.getInstance(this).getUser();
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerViewportfolio = findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(this);
         currentUsername =user.getUsername();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewportfolio.setLayoutManager(new LinearLayoutManager(this));
         imageList = new ArrayList<>();
         myAdapter = new imageAdapter(this,imageList);
-        recyclerView.setAdapter(myAdapter);
+        recyclerViewportfolio.setAdapter(myAdapter);
         //System.out.println(currentUsername);
 
 

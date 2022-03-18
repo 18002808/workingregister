@@ -1,0 +1,105 @@
+package com.example.artyapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+public class Various extends AppCompatActivity {
+
+        RecyclerView recyclerViewportfolio;
+        imageAdapter  myAdapter;
+        ArrayList<Image> imageList;
+        Image modelImage;
+        LinearLayoutManager linearLayoutManager;
+        private String currentUsername;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_various);
+            User user = SharedPrefManager.getInstance(this).getUser();
+            recyclerViewportfolio = findViewById(R.id.recyclerView);
+            linearLayoutManager = new LinearLayoutManager(this);
+            currentUsername = user.getUsername();
+            recyclerViewportfolio.setLayoutManager(new LinearLayoutManager(this));
+            imageList = new ArrayList<>();
+            myAdapter = new imageAdapter(this, imageList);
+            recyclerViewportfolio.setAdapter(myAdapter);
+            //System.out.println(currentUsername);
+
+
+            //getImage(currentUsername);
+            getImage();
+
+
+        }
+
+        public void getImage() {
+
+            StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.36/artapp/fetchallImages.php",
+                    new Response.Listener<String>() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        public void onResponse(String response) {
+
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                String succes = jsonObject.getString("success");
+
+                                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                                if (succes.equals("1")) {
+
+                                    for (int i = 0; i < jsonArray.length(); i++) {
+                                        JSONObject object = jsonArray.getJSONObject(i);
+
+                                        int id = Integer.parseInt(object.getString("id"));
+                                        String images = object.getString("image");
+                                        String imageName = object.getString("imageName");
+                                        String description = object.getString("description");
+                                        String username = object.getString("username");
+
+                                        String image = "http://192.168.0.36/artapp/Images/" + images;
+
+                                        modelImage = new Image(id, image, imageName, description, username);
+                                        imageList.add(modelImage);
+                                        myAdapter.notifyDataSetChanged();
+
+                                    }
+
+
+                                }
+
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // Toast.makeText(addImage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+            requestQueue.add(request);
+            VolleySingleton.getInstance(this).addToRequestQueue(request);
+        }
+    }

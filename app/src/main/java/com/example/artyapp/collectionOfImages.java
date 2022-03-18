@@ -17,6 +17,9 @@ public class collectionOfImages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collection_of_images);
         startActivity(new Intent(collectionOfImages.this, newImage.class));
+
+
+
         /*addImage = findViewById(R.id.gotoaddimages);
 
         addImage.setOnClickListener(new View.OnClickListener() {
