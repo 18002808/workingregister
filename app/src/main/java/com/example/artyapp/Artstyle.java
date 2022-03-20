@@ -40,7 +40,7 @@ public class Artstyle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artstyle);
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView2);
         linearLayoutManager = new LinearLayoutManager(this);
         artStyle = findViewById(R.id.artStyleSearch);
         search = findViewById(R.id.searchArtStyle);
