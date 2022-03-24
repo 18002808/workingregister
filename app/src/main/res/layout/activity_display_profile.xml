@@ -91,4 +91,23 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/updateProfileBtn"
+        android:layout_width="185dp"
+        android:layout_height="43dp"
+        android:text="UPDATE ACCOUNT"
+        app:layout_constraintBottom_toTopOf="@+id/deleteAccBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+    <Button
+        android:id="@+id/deleteAccBtn"
+        android:layout_width="185dp"
+        android:layout_height="41dp"
+        android:text="DELETE ACCOUNT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

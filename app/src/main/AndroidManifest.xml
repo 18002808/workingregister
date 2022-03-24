@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Artyapp">
         <activity
+            android:name=".ViewAndAddToCart"
+            android:exported="false" />
+        <activity
+            android:name=".ArtistPortfolio"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateAccount"
+            android:exported="false" />
+        <activity
             android:name=".Artstyle"
             android:exported="false" />
         <activity

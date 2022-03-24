@@ -1,5 +1,7 @@
 package com.example.artyapp;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,13 +35,23 @@ public class imageAdapter extends RecyclerView.Adapter<imageViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull imageViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull imageViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Image image  = imageArrayList.get(position);
         Glide.with(context)
                 .load(image.getImage())
                 .into(holder.imageView);
         holder.imageName.setText(image.getImageName());
         holder.imageDescription.setText( image.getImageDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context,ViewAndAddToCart.class);
+                i.putExtra("image",imageArrayList.get(position).getImage());
+                i.putExtra("imageId",imageArrayList.get(position).getId());
+                //i.putExtra("username",imageArrayList.get(position).getUsername());
+                context.startActivity(i);
+            }
+        });
 
 
     }
@@ -61,7 +73,7 @@ class imageViewHolder extends RecyclerView.ViewHolder{
     public imageViewHolder(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.addImageIcon);
-        imageName = itemView.findViewById(R.id.textName);
-        imageDescription = itemView.findViewById(R.id.textViewDescription);
+        imageName = itemView.findViewById(R.id.artist);
+        imageDescription = itemView.findViewById(R.id.artitstFullName);
     }
 }

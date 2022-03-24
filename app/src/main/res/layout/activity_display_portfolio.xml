@@ -6,33 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".displayPortfolio">
 
-    <ImageView
-        android:id="@+id/idIVIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/idTVHeading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idIVIcon"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints" />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idTVHeading"
-        android:layout_centerHorizontal="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="323dp" />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerviewArtist"
+        android:layout_width="357dp"
+        android:layout_height="631dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

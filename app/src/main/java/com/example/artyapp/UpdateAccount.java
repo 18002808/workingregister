@@ -23,10 +23,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class register extends AppCompatActivity {
+public class UpdateAccount extends AppCompatActivity {
     TextView login;
     private EditText nameEditText, usernameEditText,passwordEditText,emailEditText;
-    private Button registerButton;
+    private Button updateButton;
     private String  name, username, password, email;
 
 
@@ -35,22 +35,15 @@ public class register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        nameEditText = findViewById(R.id.accname);
-        usernameEditText = findViewById(R.id.accusername);
-        passwordEditText = findViewById(R.id.accpassword);
-        emailEditText = findViewById(R.id.accemail);
+        nameEditText = findViewById(R.id.accnameUpt);
+        usernameEditText = findViewById(R.id.accusernameUpt);
+        passwordEditText = findViewById(R.id.accpasswordUpt);
+        emailEditText = findViewById(R.id.accemailUpt);
 
-        login = findViewById(R.id.loginLink);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(register.this, login.class));
-            }
-        });
 
-        registerButton = findViewById(R.id.signUpBtn);
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        updateButton = findViewById(R.id.updatebtn);
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name = nameEditText.getText().toString();
@@ -138,3 +131,4 @@ public class register extends AppCompatActivity {
 
 
 }
+

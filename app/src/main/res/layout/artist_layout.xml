@@ -25,18 +25,10 @@
     -->
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="379dp"
+        android:layout_height="90dp">
 
         <!--ImageVIew to display our Course Image-->
-        <ImageView
-            android:id="@+id/addImageIcon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/app_name"
-            android:padding="5dp"/>
-
 
 
         <!--Text View to display Course Name-->
@@ -46,8 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/addImageIcon"
-            android:text="course_name"
+            android:text="Artist"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -61,9 +52,7 @@
             android:layout_below="@id/artist"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/addImageIcon"
             android:drawablePadding="2dp"
-            android:text="course_rating"
-            />
+            android:text="name" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

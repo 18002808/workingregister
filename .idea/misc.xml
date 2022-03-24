@@ -15,13 +15,14 @@
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/drawable/round_btn.xml" value="0.195" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.176" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_addimage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_artist_portfolio.xml" value="0.264" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_artstyle.xml" value="0.16607773851590105" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_categories.xml" value="0.264" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_collection_of_images.xml" value="0.1" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_collections.xml" value="0.264" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_image.xml" value="0.1" />
-        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_portfolio.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_profile.xml" value="0.16" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_portfolio.xml" value="0.176" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_display_profile.xml" value="0.4" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_image.xml" value="0.1" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_login2.xml" value="0.264" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -31,8 +32,10 @@
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_register.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_show_artist_portfolio.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_start_page.xml" value="0.4" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_update_account.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/activity_various.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/card_layout.xml" value="0.1" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/artist_layout.xml" value="0.4" />
+        <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/card_layout.xml" value="0.264" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/cardviewforcategories.xml" value="0.1" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/category.xml" value="0.1" />
         <entry key="..\:/Users/light/AndroidStudioProjects/artyapp/app/src/main/res/layout/custom_image_layout.xml" value="0.1" />

@@ -49,7 +49,7 @@
 
 
         <TextView
-            android:id="@+id/textName"
+            android:id="@+id/artist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addImageIcon"
@@ -64,10 +64,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewDescription"
+            android:id="@+id/artitstFullName"
             android:layout_width="wrap_content"
             android:layout_height="89dp"
-            android:layout_below="@+id/textName"
+            android:layout_below="@+id/artist"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
