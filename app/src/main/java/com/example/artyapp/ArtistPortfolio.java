@@ -31,6 +31,7 @@ public class ArtistPortfolio extends AppCompatActivity {
     ArrayList<Image> imageList;
     Image modelImage;
     LinearLayoutManager linearLayoutManager;
+    TextView artistName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +43,14 @@ public class ArtistPortfolio extends AppCompatActivity {
         imageList = new ArrayList<>();
         myAdapter = new imageAdapter(this, imageList);
         recyclerView.setAdapter(myAdapter);
+        artistName = findViewById(R.id.artistName);
 
         username = getIntent().getExtras().getString("username");
         name = getIntent().getExtras().getString("name");
+        artistName.setText(username);
         getImage();
+
+
 
 
 
@@ -111,4 +116,6 @@ public class ArtistPortfolio extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
+
+
 }

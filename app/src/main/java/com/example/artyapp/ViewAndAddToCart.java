@@ -16,6 +16,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,11 +41,8 @@ public class ViewAndAddToCart extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(detailsImageActivityForCollections.this, Cart.class);
-                //intent.putExtra("imgUrl", url);
 
-                //startActivity(intent);
-                StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.36/artapp/imagecartetesting.php"
+                StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.0.36/artapp/addtocart.php"
                         , new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -60,7 +59,8 @@ public class ViewAndAddToCart extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
-                        params.put("image", imageId);
+                        params.put("image", image);
+                        params.put("imageId",imageId);
                         params.put("username", username);
                         return params;
                     }
@@ -71,5 +71,10 @@ public class ViewAndAddToCart extends AppCompatActivity {
 
             }
         });
+
+
+        imageView = findViewById(R.id.image_view);
+
+        Glide.with(this).asBitmap().load(image).into(imageView);
     }
 }

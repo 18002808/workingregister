@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-    <!--creating a button to set the wallpaper-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

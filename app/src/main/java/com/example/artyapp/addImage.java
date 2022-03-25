@@ -43,6 +43,7 @@ public class addImage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addimage);
+
         User user = SharedPrefManager.getInstance(this).getUser();
         recyclerViewportfolio = findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(this);
