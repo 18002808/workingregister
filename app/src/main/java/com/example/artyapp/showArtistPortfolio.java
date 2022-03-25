@@ -42,10 +42,7 @@ public class showArtistPortfolio extends AppCompatActivity {
         imageList = new ArrayList<>();
         myAdapter = new imageAdapter(this, imageList);
         recyclerView.setAdapter(myAdapter);
-        //System.out.println(currentUsername);
 
-
-        //getImage(currentUsername);
         getImage();
 
 
